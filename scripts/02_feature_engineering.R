@@ -9,25 +9,26 @@ df_long %>%
   filter(is.na(Value)) %>%
   count(Category)
 
-"""
-  Category     n
-<chr>    <int>
-  1 CDR         31
-2 GDR         31
-3 IT_value     1
-4 ODR         31
-5 elderpop    31
-"""
+
+#   Category     n
+# <chr>    <int>
+#   1 CDR         31
+# 2 GDR         31
+# 3 IT_value     1
+# 4 ODR         31
+# 5 elderpop    31
+
 
 df_long %>%
   filter(is.na(Value)) %>%
   count(Year)
-"""
-Year     n
-  <dbl> <int>
-1  2016     1
-2  2020   124
-"""
+
+
+# Year     n
+#   <dbl> <int>
+# 1  2016     1
+# 2  2020   124
+
 
 # Demographic survey indicators were unavailable for 2020; #
 # therefore, 2020 is excluded from demographic alignment analysis.#
@@ -117,6 +118,8 @@ print(notable_correlations)
 # plot the matrix
 library(corrplot)
 
+pic_path <- "/Users/ez_us/Documents/demography_service_structure/output"
+png(file.path(pic_path, "correlation_heatmap.png"), width = 9, height = 8, units = "in", res = 300)
 corrplot(
   cor_matrix,
   method     = "color",
@@ -131,6 +134,7 @@ corrplot(
   mar        = c(0, 0, 2, 0)
 )
 
+dev.off()
 
 
 
