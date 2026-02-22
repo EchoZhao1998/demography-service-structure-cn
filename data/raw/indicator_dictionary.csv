@@ -1,0 +1,15 @@
+Code,Explaination
+IT_value,Total Value of Technical Market(100 million yuan)
+medicalbed,Number of Beds of Medical Institutions(10000 units)
+STR_pri,Student-Teacher Ratio of Primary School
+STR_jun,Student-Teacher Ratio of Junior Secondary School
+STR_sen,Student-Teacher Ratio of Regular Senior Secondary School
+retail_value,Total Retail Sales of Consumer Goods(100 million yuan)
+birth_rate,Birth Rate
+nature_growth_rate,Nature Growth Rate
+totpop,Total population
+GDR,Gross Dependency Ratio (Sample Survey)(%)
+CDR,Children Dependency Ratio (Sample Survey)(%)
+ODR,Old Dependency Ratio (Sample Survey)(%)
+marriagerate,Marriage Rate
+elderpop,People aged ≥ 65. Note: Population data of 2005 are estimates from the national 1% population sample survey. And data of other years are 1? national sample survey on population change.
