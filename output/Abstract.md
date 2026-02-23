@@ -1,3 +1,10 @@
+---
+title: "Abstract &  Executive Summary"
+output:
+  html_document:
+    css: styles.css
+---
+
 # Abstract
 
 This study examines whether provincial service systems in China structurally and dynamically align with demographic pressure between 2016 and 2024. Using pooled panel correlations and two-way fixed-effects models, we evaluate relationships between demographic dependency ratios and service supply indicators across healthcare, education, and marriage domains.
