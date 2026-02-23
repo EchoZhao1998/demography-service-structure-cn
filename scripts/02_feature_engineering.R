@@ -218,7 +218,7 @@ ggplot(tidy_model, aes(y = term, x = estimate)) +
              linetype = "dashed",
              color = "#6B7280") +
   labs(
-    title = "Fixed-Effects Estimate: Aging Pressure on Healthcare Supply",
+    title = "Fixed-Effects Estimate: \nAging Pressure on Healthcare Supply",
     x = "Coefficient Estimate",
     y = ""
   ) +
