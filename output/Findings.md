@@ -1,6 +1,8 @@
 ---
 title: "Findings"
-output: html_document
+output:
+  html_document:
+    css: styles.css
 ---
 
 
