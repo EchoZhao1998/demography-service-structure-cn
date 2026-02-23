@@ -1,4 +1,7 @@
-# Findings
+---
+title: "Findings"
+output: html_document
+---
 
 
 <font color = "#2166AC">*Note: The following correlations are computed using pooled provincial panel data (2016–2024). These relationships reflect structural associations across provinces and time, and do not imply causal effects or within-province dynamic responsiveness.*</font>
