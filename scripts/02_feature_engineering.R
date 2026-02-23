@@ -137,4 +137,105 @@ corrplot(
 dev.off()
 
 
+# Start to Fixed-Effect analysis
 
+library(plm)
+
+
+df_model <- df_wide %>%
+  filter(!is.na(ODR))  # remove 2020
+
+# Prepare panel data
+pdata <- pdata.frame(df_model,
+                     index = c("Region", "Year"))
+
+# Model 1: Elderly Infrastructure Responsiveness
+model_elder <- plm(
+  bed_per_elderly_1000 ~ ODR,
+  data = pdata,
+  model = "within",
+  effect = "twoways"
+)
+
+summary(model_elder)
+
+# Model 2: Education Responsiveness
+model_edu <- plm(
+  edu_pri ~ CDR,
+  data = pdata,
+  model = "within",
+  effect = "twoways"
+)
+
+summary(model_edu)
+
+# Model 3: Modernazation & Marriage
+model_marriage <- plm(
+  marriagerate ~ IT_pc,
+  data = pdata,
+  model = "within",
+  effect = "twoaways"
+)
+
+summary(model_marriage)
+
+# Add plots according to the FE results
+
+# 'method = "lm"' — fits a linear regression line through the data points. "lm" stands for linear model, so it draws a straight line that best fits the relationship between ODR (x) and hospital beds (y).
+# 'se = TRUE' — displays the confidence interval (the shaded ribbon around the line). This ribbon represents uncertainty in the trend — wider ribbons mean less certainty, often because there are fewer data points or more spread in that region.
+
+library(ggplot2)
+
+ggplot(df_wide, aes(x = ODR, y = bed_per_elderly_1000)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(
+    title = "Healthcare Capacity vs Aging Pressure",
+    x = "Old Dependency Ratio (ODR)",
+    y = "Hospital Beds per 1,000 Elderly"
+  ) +
+  theme_minimal()
+
+# FE Coefficient Plot
+
+library(broom)
+
+tidy_model <- tidy(model_elder, conf.int = TRUE)
+tidy_model$term <- "Old Dependency Ratio"
+
+ggplot(tidy_model, aes(x = term, y = estimate)) +
+  geom_point(size = 3, color = "#a12b2b") +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.1) +
+  geom_text(aes(label = round(estimate, 3)), # round to 3 decimal places
+            hjust = -0.3, # shift label to the right of dot
+            vjust = 0,    # vertical position
+            size = 4,
+            color =  "#a12b2b") +
+  geom_text(aes(y = conf.low, label = round(conf.low, 3)), hjust = -0.9, size = 3.5) +
+  geom_text(aes(y = conf.high, label = round(conf.high, 3)), hjust = -0.9, size = 3.5) +
+  labs(
+    title = "Fixed-Effects Estimate: Aging Pressure on Healthcare Supply",
+    x = "",
+    y = "Coefficient Estimate"
+  ) +
+  theme_minimal()
+
+# Structural Quadrant Plot (High Value)
+
+# compute Means
+mean_ODR <- mean(df_wide$ODR, na.rm = TRUE)
+mean_bed <- mean(df_wide$bed_per_elderly_1000, na.rm = TRUE)
+
+# plot with quadrant lines
+ggplot(df_wide, aes(x = ODR, y = bed_per_elderly_1000, color = IT_pc)) +
+  geom_point(alpha = 0.6, size = 2) +
+  scale_color_gradient(low = "#d73027", high = "#1a9850") +  # red to green
+  geom_vline(xintercept = mean_ODR, linetype = "dashed") +
+  geom_hline(yintercept = mean_bed, linetype = "dashed") +
+  labs(
+    title = "Provincial Service Alignment Quadrants",
+    x = "Old Dependency Ratio",
+    y = "Beds per 1,000 Elderly"
+  ) +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) # place the title to center
