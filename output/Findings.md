@@ -146,9 +146,11 @@ This approach isolates temporal variation within provinces while controlling for
 
 While the correlation analysis establishes structural imbalance, fixed-effects (two-way) panel estimation evaluates whether provinces dynamically adjust healthcare supply in response to changes in aging pressure over time.
 
+![Fixed-Effects Estimates Across Service Domains](<Fixed-Effects Estimates Across Service Domains.png>)
+
 ### Primary Model: Aging Pressure on Healthcare Supply
 
-![Aging Pressure on Healthcare Supply](<Aging Pressure on Healthcare Supply.png>)
+![Aging Pressure on Healthcare Supply](<FE-Aging Pressure on Healthcare Supply.png>)
 
 The two-way fixed-effects model estimates the within-province relationship between Old Dependency Ratio (ODR) and elderly-adjusted bed capacity.
 
