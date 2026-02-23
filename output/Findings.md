@@ -146,7 +146,7 @@ While the correlation analysis establishes structural imbalance, fixed-effects (
 
 ### Primary Model: Aging Pressure on Healthcare Supply
 
-![Aging Pressure on Healthcare Supply](Aging Pressure on Healthcare Supply.png)
+![Aging Pressure on Healthcare Supply](<Aging Pressure on Healthcare Supply.png>)
 
 The two-way fixed-effects model estimates the within-province relationship between Old Dependency Ratio (ODR) and elderly-adjusted bed capacity.
 
@@ -162,7 +162,7 @@ This suggests limited dynamic responsiveness in healthcare infrastructure adjust
 
 ### Structural Positioning Visualised
 
-![Structural Quadrant Plot](Provincial Service Alignment Quadrants.png)
+![Structural Quadrant Plot](<Provincial Service Alignment Quadrants.png>)
 
 The quadrant plot operationalises this imbalance:
 
@@ -202,12 +202,3 @@ Education exhibits mild signs of strain under demographic pressure, though evide
 Marriage behavior appears institutionally independent from demographic and economic structural indicators in this framework.
 
 Taken together, the results suggest that provincial service systems are not fully adapting to shifting demographic burdens, with healthcare representing the most pronounced misalignment.
-
-
-
-#### Limitations
-
-- Correlation does not imply causality.
-- FE captures short-run responsiveness, not long-term capital planning.
-- Healthcare capacity measured by beds, not quality or efficiency.
-- Possible omitted variables (fiscal expenditure, migration).
