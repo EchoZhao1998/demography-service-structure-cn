@@ -19,6 +19,8 @@ Before interpreting the findings, several limitations should be acknowledged.
 
 These limitations frame the analysis as a structural diagnostic rather than a definitive causal evaluation.
 
+> Note: The sample excludes 2020 demographic survey values due to data unavailability.
+
 #### Basic Knowledge: Pearson R
 
 | r Value range  | Relation Level |
