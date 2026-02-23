@@ -203,22 +203,32 @@ library(broom)
 tidy_model <- tidy(model_elder, conf.int = TRUE)
 tidy_model$term <- "Old Dependency Ratio"
 
-ggplot(tidy_model, aes(x = term, y = estimate)) +
-  geom_point(size = 3, color = "#a12b2b") +
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.1) +
-  geom_text(aes(label = round(estimate, 3)), # round to 3 decimal places
-            hjust = -0.3, # shift label to the right of dot
-            vjust = 0,    # vertical position
-            size = 4,
-            color =  "#a12b2b") +
-  geom_text(aes(y = conf.low, label = round(conf.low, 3)), hjust = -0.9, size = 3.5) +
-  geom_text(aes(y = conf.high, label = round(conf.high, 3)), hjust = -0.9, size = 3.5) +
+library(broom)
+library(ggplot2)
+
+tidy_model <- tidy(model_elder, conf.int = TRUE)
+tidy_model$term <- "Old Dependency Ratio"
+
+ggplot(tidy_model, aes(y = term, x = estimate)) +
+  geom_point(size = 4, color = "#B91C1C") +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high),
+                 height = 0.2,
+                 color = "#B91C1C") +
+  geom_vline(xintercept = 0,
+             linetype = "dashed",
+             color = "#6B7280") +
   labs(
     title = "Fixed-Effects Estimate: Aging Pressure on Healthcare Supply",
-    x = "",
-    y = "Coefficient Estimate"
+    x = "Coefficient Estimate",
+    y = ""
   ) +
-  theme_minimal()
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    plot.title = element_text(face = "bold"),
+    axis.text.y = element_text(face = "bold")
+  )
 
 # Structural Quadrant Plot (High Value)
 
