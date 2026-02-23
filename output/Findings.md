@@ -8,6 +8,16 @@ output:
 
 <font color = "#2166AC">*Note: The following correlations are computed using pooled provincial panel data (2016–2024). These relationships reflect structural associations across provinces and time, and do not imply causal effects or within-province dynamic responsiveness.*</font>
 
+## Limitations
+
+Before interpreting the findings, several limitations should be acknowledged.
+
+1. **Non-causal interpretation**: Correlation analysis reflects structural associations and does not establish causal relationships.
+2. **Short-run responsiveness**: Fixed-effects models capture within-province temporal adjustment during 2016–2024, but may not reflect long-term infrastructure planning cycles.
+3. **Measurement scope**: Healthcare capacity is proxied by hospital beds per 1,000 elderly residents, which does not capture service quality, staffing adequacy, or efficiency.
+4. **Potential omitted variables**: Fiscal expenditure, inter-provincial migration, urbanisation rate, and policy shocks are not explicitly modelled.
+
+These limitations frame the analysis as a structural diagnostic rather than a definitive causal evaluation.
 
 #### Basic Knowledge: Pearson R
 
@@ -16,6 +26,19 @@ output:
 | r ≥ 0.7        | Strong         |
 | 0.5 ≤ r < 0.7  | Moderate       |
 | r < 0.5        | Weak           |
+
+## Indicator Construction Notes
+
+To ensure clarity for readers, several indicators in this report are constructed variables derived from raw data.
+
+- **bed_per_elderly_1000**: (medicalbed / elderpop) × 1000. Measures hospital beds per 1,000 elderly residents.
+- **IT_pc**: IT_value / totpop. IT economic output per capita.
+- **retail_pc**: retail_value / totpop. Retail consumption per capita.
+- **edu_pri, edu_jun, edu_sen**: Defined as 1 / STR (student–teacher ratio) at primary, junior, and senior levels. A higher value indicates greater teacher availability per student.
+- **ODR (Old Dependency Ratio)**: Ratio of elderly population to working-age population.
+- **CDR (Children Dependency Ratio)**: Ratio of child population to working-age population.
+
+All education indicators are transformed so that higher values consistently represent higher resource intensity, allowing interpretation to align across service dimensions.
 
 ![correlation heatmap](correlation_heatmap.png)
 
@@ -109,28 +132,82 @@ Its relative structural independence makes it analytically distinct rather than 
 
 > When a user sees a province with an unusually high or low marriage rate on the map, they cannot simply explain it away by looking at the other variables. It demands its own investigation, which makes it a compelling standalone indicator.
 
-## Limitations and Next Analytical Step
+## From Structural Association to Dynamic Responsiveness
 
-The correlation analysis presented above is based on pooled provincial panel data (2016–2024). While it reveals strong structural associations, it does not distinguish between cross-provincial differences and within-province dynamic adjustments over time. Correlation does not imply causality, nor does it test whether provinces actively adjust service supply in response to demographic pressure.
+The correlation analysis identifies cross-provincial structural imbalances but does not determine whether provinces adjust service supply in response to demographic pressure over time.
 
-The next stage of this project will apply fixed-effects panel regression to examine within-province responsiveness. This approach will help determine whether increases in aging or child dependency within a province are associated with subsequent adjustments in healthcare or education supply, controlling for time-invariant provincial characteristics.
+To examine within-province responsiveness, fixed-effects panel regressions are applied in the next section.
 
-## Insights base on FE regression results
+This approach isolates temporal variation within provinces while controlling for time-invariant regional characteristics and common year shocks.
 
-### Healthcare Capacity vs Aging Pressure
+## Fixed-Effects Evidence: Primary Focus on Healthcare Responsiveness
 
-![Healthcare Capacity vs Aging Pressure](healthcare_vs_aging.png)
+While the correlation analysis establishes structural imbalance, fixed-effects (two-way) panel estimation evaluates whether provinces dynamically adjust healthcare supply in response to changes in aging pressure over time.
 
-*The downward-sloping regression line visually confirms the strong negative structural association (r = −0.79). Provinces experiencing higher aging pressure tend to exhibit lower elderly-adjusted bed capacity.*
+### Primary Model: Aging Pressure on Healthcare Supply
 
-### Aging Pressure on Healthcare Supply
-![Aging Pressure on Healthcare Supply](<Aging Pressure on Healthcare Supply.png>)
+![Aging Pressure on Healthcare Supply](Aging Pressure on Healthcare Supply.png)
 
-*The fixed-effects estimate remains negative and statistically significant, suggesting that within provinces, increases in aging pressure are associated with reductions in elderly-adjusted bed capacity.*
+The two-way fixed-effects model estimates the within-province relationship between Old Dependency Ratio (ODR) and elderly-adjusted bed capacity.
 
-### Structural Quadrant Plot (High Value)
-![Structural Quadrant Plot](<Provincial Service Alignment Quadrants.png>)
+The coefficient on ODR is negative and statistically significant (p < 0.05), indicating that increases in aging pressure within a province are associated with reductions in hospital beds per 1,000 elderly residents.
 
-*Most data points in the bottom-right quadrant confirm the concern from your fixed-effects model: healthcare supply is not keeping pace with aging demand in high-ODR provinces.*
+This result is substantively important:
 
-*The top-left cluster (ODR ~10–12, beds >9) likely represents less-aged provinces that happen to have relatively well-resourced healthcare systems.*
+- The negative association is not merely structural (cross-sectional).
+- It persists even after controlling for province fixed effects and common year shocks.
+- Within provinces, healthcare supply does not expand in response to rising aging pressure.
+
+This suggests limited dynamic responsiveness in healthcare infrastructure adjustment.
+
+### Structural Positioning Visualised
+
+![Structural Quadrant Plot](Provincial Service Alignment Quadrants.png)
+
+The quadrant plot operationalises this imbalance:
+
+- Bottom-right quadrant (High ODR, Low Beds): Structural misalignment zone.
+- Top-left quadrant (Low ODR, High Beds): Relative surplus zone.
+
+The concentration of provinces in the misalignment quadrant reinforces the regression finding that aging demand is not matched by proportional healthcare expansion.
+
+---
+
+## Supplementary Fixed-Effects Evidence
+
+To assess whether similar responsiveness patterns appear in other service domains, additional two-way fixed-effects models were estimated.
+
+### Education Responsiveness
+
+The relationship between Children Dependency Ratio (CDR) and junior-level teacher availability (edu_jun) is negative and marginally significant (p ≈ 0.07).
+
+This suggests that increases in youth dependency may be associated with slight reductions in teacher availability per student, though the statistical evidence is weaker than in healthcare.
+
+Education adjustment appears limited, but less decisively so than healthcare.
+
+### Marriage Rate and IT Development
+
+The fixed-effects model examining marriage rate and IT development (IT_pc) shows no statistically significant relationship.
+
+Unlike healthcare, marriage dynamics do not exhibit measurable responsiveness to economic structural change within provinces during the sample period.
+
+---
+
+## Overall Interpretation
+
+Across domains, healthcare shows the clearest evidence of structural imbalance combined with weak dynamic adjustment.
+
+Education exhibits mild signs of strain under demographic pressure, though evidence is less robust.
+
+Marriage behavior appears institutionally independent from demographic and economic structural indicators in this framework.
+
+Taken together, the results suggest that provincial service systems are not fully adapting to shifting demographic burdens, with healthcare representing the most pronounced misalignment.
+
+
+
+#### Limitations
+
+- Correlation does not imply causality.
+- FE captures short-run responsiveness, not long-term capital planning.
+- Healthcare capacity measured by beds, not quality or efficiency.
+- Possible omitted variables (fiscal expenditure, migration).
