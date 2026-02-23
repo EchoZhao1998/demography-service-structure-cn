@@ -249,3 +249,39 @@ ggplot(df_wide, aes(x = ODR, y = bed_per_elderly_1000, color = retial_pc)) +
   ) +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5)) # place the title to center
+
+# library(broom)
+# library(dplyr)
+# library(ggplot2)
+
+# Tidy models
+tidy_elder <- tidy(model_elder, conf.int = TRUE) %>%
+  mutate(variable = "Healthcare (ODR → Beds)")
+
+tidy_edu <- tidy(model_edu, conf.int = TRUE) %>%
+  mutate(variable = "Education (CDR → Teacher Availability)")
+
+tidy_marriage <- tidy(model_marriage, conf.int = TRUE) %>%
+  mutate(variable = "Marriage (IT → Marriage Rate)")
+
+combined <- bind_rows(tidy_elder, tidy_edu, tidy_marriage)
+
+ggplot(combined, aes(y = variable, x = estimate)) +
+  geom_point(size = 4, color = "#1E3A8A") +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high),
+                 height = 0.2,
+                 color = "#1E3A8A") +
+  geom_vline(xintercept = 0,
+             linetype = "dashed",
+             color = "#6B7280") +
+  labs(
+    title = "Fixed-Effects Estimates Across Service Domains",
+    x = "Coefficient Estimate",
+    y = ""
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
