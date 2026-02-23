@@ -15,13 +15,13 @@ Two-way fixed-effects estimation confirms that the healthcare imbalance is not m
 
 Overall, the evidence suggests limited dynamic adjustment of provincial service infrastructure in response to shifting demographic burdens, with healthcare representing the most pronounced misalignment.
 
-⸻
+
 
 # Executive Summary
 
-## Research Question
+## **Research Question**
 
-Do provincial service systems adjust in response to demographic pressure?
+*Do provincial service systems adjust in response to demographic pressure?*
 
 ### Data Scope
 
@@ -29,11 +29,11 @@ Do provincial service systems adjust in response to demographic pressure?
 Two-way fixed-effects estimation
 Healthcare, education, and marriage domains
 
-⸻
 
-### Key Findings
 
-1. Structural Healthcare Imbalance
+### **Key Findings**
+
+**1. Structural Healthcare Imbalance**
 
 Provinces with higher aging pressure systematically exhibit lower hospital bed availability per 1,000 elderly residents.
 
@@ -42,9 +42,9 @@ Fixed-effects results show that within provinces, increases in aging pressure ar
 
 Interpretation: Healthcare infrastructure expansion is not keeping pace with demographic aging.
 
-⸻
 
-2. Education: Signs of Strain, Limited Evidence of Adjustment
+
+**2. Education: Signs of Strain, Limited Evidence of Adjustment**
 
 Education resource intensity is negatively associated with child dependency ratios.
 
@@ -52,9 +52,9 @@ Fixed-effects estimates show marginal responsiveness, but statistical evidence i
 
 Interpretation: Youth-heavy provinces may face educational resource strain, though adjustment patterns are less conclusive.
 
-⸻
 
-3. Marriage Dynamics Are Structurally Independent
+
+**3. Marriage Dynamics Are Structurally Independent**
 
 Marriage rates show weak correlations with both demographic and economic indicators.
 
@@ -62,9 +62,9 @@ No significant within-province responsiveness to IT development is detected.
 
 Interpretation: Marriage behavior operates under institutional or cultural mechanisms not captured by demographic or economic structure alone.
 
-⸻
 
-## Overall Conclusion
+
+## **Overall Conclusion**
 
 Across domains, provincial systems exhibit limited dynamic responsiveness to demographic pressure.
 
