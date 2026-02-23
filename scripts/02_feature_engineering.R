@@ -227,9 +227,9 @@ mean_ODR <- mean(df_wide$ODR, na.rm = TRUE)
 mean_bed <- mean(df_wide$bed_per_elderly_1000, na.rm = TRUE)
 
 # plot with quadrant lines
-ggplot(df_wide, aes(x = ODR, y = bed_per_elderly_1000, color = IT_pc)) +
+ggplot(df_wide, aes(x = ODR, y = bed_per_elderly_1000, color = retial_pc)) +
   geom_point(alpha = 0.6, size = 2) +
-  scale_color_gradient(low = "#d73027", high = "#1a9850") +  # red to green
+  scale_color_gradient(low = "#d73027", high = "#1a9850") +
   geom_vline(xintercept = mean_ODR, linetype = "dashed") +
   geom_hline(yintercept = mean_bed, linetype = "dashed") +
   labs(
