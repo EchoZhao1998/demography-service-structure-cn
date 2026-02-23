@@ -42,7 +42,7 @@ body::before {
 
 /* ── Headings ── */
 h1 {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--ink);
@@ -64,7 +64,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-size: 1rem;
   font-weight: 500;
   color: var(--accent);
@@ -96,7 +96,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.8rem 0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-size: 0.88rem;
 }
 
@@ -137,7 +137,7 @@ blockquote {
   padding: 1rem 1.4rem;
   border-left: 3px solid var(--rule);
   background: var(--quote-bg);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-style: italic;
   font-size: 1.05rem;
   color: var(--ink-light);
@@ -158,19 +158,19 @@ code {
 
 /* ── Note / colored font tag ── */
 font[color="#2166AC"],
-.note {
-  display: block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--accent);
-  background: #edf3f9;
-  border-left: 3px solid var(--accent);
-  padding: 0.7rem 1rem;
-  margin: 1.2rem 0;
-  border-radius: 0 4px 4px 0;
-  line-height: 1.6;
-}
+  .note {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--accent);
+    background: #edf3f9;
+    border-left: 3px solid var(--accent);
+    padding: 0.7rem 1rem;
+    margin: 1.2rem 0;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.6;
+  }
 
 /* ── Horizontal rule ── */
 hr {
