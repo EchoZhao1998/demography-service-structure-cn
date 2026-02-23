@@ -142,11 +142,17 @@ To examine within-province responsiveness, fixed-effects panel regressions are a
 
 This approach isolates temporal variation within provinces while controlling for time-invariant regional characteristics and common year shocks.
 
-## Fixed-Effects Evidence: Primary Focus on Healthcare Responsiveness
+## Fixed-Effects Evidence: Cross-Domain Responsiveness Comparison
 
-While the correlation analysis establishes structural imbalance, fixed-effects (two-way) panel estimation evaluates whether provinces dynamically adjust healthcare supply in response to changes in aging pressure over time.
+While the correlation analysis establishes structural imbalance, two-way fixed-effects panel estimation evaluates whether provinces dynamically adjust service supply in response to demographic pressure over time across domains.
+
+The combined coefficient plot below enables direct cross-domain comparison within a unified estimation framework.
 
 ![Fixed-Effects Estimates Across Service Domains](<Fixed-Effects Estimates Across Service Domains.png>)
+
+Healthcare exhibits the largest and most statistically robust negative responsiveness to demographic pressure. Education shows weaker and only marginally significant adjustment, while marriage rates display no statistically detectable within-province responsiveness. This comparative perspective clarifies that healthcare misalignment is not merely one result among many, but the dominant pattern in the panel evidence.
+
+The domain-specific model below zooms into the healthcare coefficient to illustrate magnitude and confidence interval in greater detail.
 
 ### Primary Model: Aging Pressure on Healthcare Supply
 
@@ -161,8 +167,7 @@ This result is substantively important:
 - The negative association is not merely structural (cross-sectional).
 - It persists even after controlling for province fixed effects and common year shocks.
 - Within provinces, healthcare supply does not expand in response to rising aging pressure.
-
-This suggests limited dynamic responsiveness in healthcare infrastructure adjustment.
+This suggests limited dynamic responsiveness in healthcare infrastructure adjustment. A one-percentage-point increase in the Old Dependency Ratio is associated with an estimated decline of approximately 0.045 beds per 1,000 elderly residents, indicating that capacity expansion does not proportionally track demographic aging.
 
 ### Structural Positioning Visualised
 
@@ -183,26 +188,22 @@ To assess whether similar responsiveness patterns appear in other service domain
 
 ### Education Responsiveness
 
-The relationship between Children Dependency Ratio (CDR) and junior-level teacher availability (edu_jun) is negative and marginally significant (p ≈ 0.07).
-
-This suggests that increases in youth dependency may be associated with slight reductions in teacher availability per student, though the statistical evidence is weaker than in healthcare.
-
-Education adjustment appears limited, but less decisively so than healthcare.
+The relationship between Children Dependency Ratio (CDR) and junior-level teacher availability (edu_jun) is negative and marginally significant (p ≈ 0.07). While the direction is consistent with structural strain, the statistical evidence is weaker than in healthcare and does not support a definitive conclusion of systematic adjustment failure.
 
 ### Marriage Rate and IT Development
 
 The fixed-effects model examining marriage rate and IT development (IT_pc) shows no statistically significant relationship.
 
-Unlike healthcare, marriage dynamics do not exhibit measurable responsiveness to economic structural change within provinces during the sample period.
+Unlike healthcare, marriage dynamics do not exhibit statistically significant responsiveness to economic structural change within provinces during the sample period. The confidence interval crosses zero, reinforcing the interpretation of institutional independence rather than adaptive alignment.
 
 ---
 
 ## Overall Interpretation
 
-Across domains, healthcare shows the clearest evidence of structural imbalance combined with weak dynamic adjustment.
+Across domains, healthcare demonstrates the clearest evidence of structural imbalance combined with weak dynamic adjustment.
 
-Education exhibits mild signs of strain under demographic pressure, though evidence is less robust.
+Education exhibits directional signs of demographic strain but only marginal statistical support for within-province responsiveness.
 
-Marriage behavior appears institutionally independent from demographic and economic structural indicators in this framework.
+Marriage behavior remains largely independent from demographic and economic structural indicators in this framework.
 
-Taken together, the results suggest that provincial service systems are not fully adapting to shifting demographic burdens, with healthcare representing the most pronounced misalignment.
+Taken together, the panel evidence suggests that provincial service systems are not fully adapting to shifting demographic burdens, with healthcare representing the most pronounced and empirically robust misalignment.
